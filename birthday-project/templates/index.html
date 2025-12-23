@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday 🎉</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Canvas untuk confetti -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- SCENE 1: Opening -->
+    <div class="scene active" id="scene1">
+        <div class="content">
+            <h1 class="title glow">Happy Birthday {{ nama }} 🎉</h1>
+            <p class="date">{{ tanggal }}</p>
+            <button class="btn" onclick="goToScene(2)">
+                🎁 Klik untuk Kejutan
+            </button>
+        </div>
+    </div>
+
+    <!-- SCENE 2: Ucapan Spesial -->
+    <div class="scene" id="scene2">
+        <div class="content">
+            <p class="text-animate" id="text2">
+                Di tanggal 31 Desember ini,<br>
+                bukan cuma pergantian tahun,<br>
+                tapi juga hari spesial lahirnya seseorang yang luar biasa 💖
+            </p>
+            <button class="btn" onclick="goToScene(3)">
+                💌 Baca Pesan Spesial
+            </button>
+        </div>
+    </div>
+
+    <!-- SCENE 3: Pesan Ulang Tahun -->
+    <div class="scene" id="scene3">
+        <div class="content">
+            <p class="text-animate" id="text3">
+                Semoga di umur yang baru,<br>
+                setiap langkahmu dipenuhi kebahagiaan,<br>
+                setiap mimpimu semakin dekat,<br>
+                dan setiap harimu selalu punya alasan untuk tersenyum ✨<br><br>
+                Terima kasih sudah menjadi versi terbaik dari dirimu sendiri.
+            </p>
+            <button class="btn" onclick="goToScene(4)">
+                📸 Lihat Kenangan
+            </button>
+        </div>
+    </div>
+
+    <!-- SCENE 4: Galeri Foto -->
+    <div class="scene" id="scene4">
+        <div class="content">
+            <h2 class="gallery-title">Kenangan yang tak tergantikan 💫</h2>
+            <div class="photo-gallery">
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <span>📷 Foto 1</span>
+                        <!-- Ganti dengan: <img src="{{ url_for('static', filename='assets/images/foto1.jpg') }}" alt="Foto 1"> -->
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <span>📷 Foto 2</span>
+                        <!-- Ganti dengan: <img src="{{ url_for('static', filename='assets/images/foto2.jpg') }}" alt="Foto 2"> -->
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <div class="photo-placeholder">
+                        <span>📷 Foto 3</span>
+                        <!-- Ganti dengan: <img src="{{ url_for('static', filename='assets/images/foto3.jpg') }}" alt="Foto 3"> -->
+                    </div>
+                </div>
+            </div>
+            <button class="btn" onclick="goToScene(5)">
+                🎆 Penutup
+            </button>
+        </div>
+    </div>
+
+    <!-- SCENE 5: Closing -->
+    <div class="scene" id="scene5">
+        <div class="content">
+            <h1 class="title glow">Happy Birthday {{ nama }} 🎂</h1>
+            <p class="date">{{ tanggal }}</p>
+            <p class="closing-text">
+                May your new year be as beautiful as your smile ✨
+            </p>
+            <button class="btn" onclick="goToScene(1)">
+                🔄 Ulangi Lagi
+            </button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
